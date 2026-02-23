@@ -8,6 +8,13 @@ public class Carrito implements Interface {
     
     @Override
     public ArrayList<Elemento> agrega(Elemento element) {
+
+        for (Elemento elemento : lista) {
+            if (elemento.getNombreProduct().equalsIgnoreCase(element.getNombreProduct())) {
+                elemento.setCantidad(elemento.getCantidad()+element.getCantidad());
+                return lista;
+            }
+        }
         lista.add(element);
         return lista;
     }
